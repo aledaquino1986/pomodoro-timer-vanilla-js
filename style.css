@@ -1,0 +1,84 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: inherit;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.pomodoro_container {
+  font-size: 4rem;
+  margin-top: 5rem;
+}
+
+.pomodoro-title {
+  margin: 3rem 0rem;
+  transition: all 0.5s;
+}
+
+.pomodoro-title h2 {
+  font-weight: 200;
+}
+
+.pomodoro-timer {
+  padding: 3rem;
+}
+
+.pomodoro-timer span {
+  font-size: 7rem;
+}
+
+button {
+  padding: 1rem 2rem;
+  margin-right: 1rem;
+  outline: none;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  background-color: rgb(32, 29, 29);
+  color: whitesmoke;
+  box-shadow: 0 0.5rem 0.75rem rgb(75, 72, 72);
+  transition: all 0.4s;
+}
+
+button:hover {
+  filter: brightness(120%);
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 0.3rem 0.5rem rgb(75, 72, 72);
+}
+
+@media only screen and (max-width: 600px) {
+  .pomodoro-title {
+    font-size: 3rem;
+  }
+
+  .pomodoro-timer span {
+    font-size: 6rem;
+  }
+}
