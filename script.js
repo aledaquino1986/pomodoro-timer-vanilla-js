@@ -1,15 +1,14 @@
 (function () {
-  const title = document.querySelector(".pomodoro-title h2");
-  const minutesTimer = document.querySelector(".pomodoro-timer__minutes");
-  const secondsTimer = document.querySelector(".pomodoro-timer__seconds");
-
-  const startButton = document.querySelector(".start");
-  const stopButton = document.querySelector(".stop");
-  const resetButton = document.querySelector(".reset");
-
-  const INITIAL_TIMELEFT = 25 * 60;
-
-  let interval;
+  const {
+    title,
+    minutesTimer,
+    secondsTimer,
+    startButton,
+    stopButton,
+    resetButton,
+    INITIAL_TIMELEFT,
+    titles
+  } = appVariables;
 
   const formatTime = time => {
     return time.toString().padStart(2, "0");
@@ -31,17 +30,6 @@
     minutesTimer.innerText = minutes;
     secondsTimer.innerText = seconds;
   };
-
-  let timeLeft = 25 * 60;
-  let minutes = getMinutes(timeLeft);
-  let seconds = getSeconds(timeLeft);
-
-  const titles = [
-    "Concentrate!",
-    "Focus your energy for 25 minutes!",
-    "Do not let your mind distract you!",
-    "Focus!"
-  ];
 
   const reduceTimeLeft = previousTime => {
     timeLeft = previousTime - 1;
@@ -69,6 +57,13 @@
     const randomTitle = titles[Math.floor(Math.random() * titles.length)];
     return randomTitle;
   };
+
+  let timeLeft = 25 * 60;
+  let minutes = getMinutes(timeLeft);
+  let seconds = getSeconds(timeLeft);
+  let interval;
+
+  // Event Listeners
 
   startButton.addEventListener("click", () => {
     if (interval) {
